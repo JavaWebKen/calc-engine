@@ -1,9 +1,10 @@
 package org.moonlightcoders.ken.calcEngine;
 
-public class Subtractor extends CalculateBase {
+public class Subtracter extends CalculateBase {
 
-    public Subtractor() {}
-    public Subtractor(double leftVal, double rightVal) {
+    public Subtracter() {}
+    public Subtracter(double leftVal, double rightVal) {
+
         super(leftVal, rightVal);
     }
 

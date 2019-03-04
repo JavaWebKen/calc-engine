@@ -3,6 +3,7 @@ package org.moonlightcoders.ken.calcEngine;
 public class Divider extends CalculateBase {
     public Divider() {}
     public Divider(double leftVal, double rightVal) {
+
         super(leftVal, rightVal);
     }
 

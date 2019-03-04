@@ -3,6 +3,7 @@ package org.moonlightcoders.ken.calcEngine;
 public class Multiplier extends CalculateBase {
     public Multiplier() {}
     public Multiplier(double leftVal, double rightVal) {
+
         super(leftVal, rightVal);
     }
 
