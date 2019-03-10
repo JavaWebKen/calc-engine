@@ -1,6 +1,6 @@
 package org.moonlightcoders.ken.calcEngine;
 
-public enum MathCommand {
+enum MathCommand {
     Add,
     Subtract,
     Multiply,
