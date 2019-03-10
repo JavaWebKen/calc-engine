@@ -2,9 +2,12 @@ package org.moonlightcoders.ken.myapp;
 
 import org.moonlightcoders.ken.calcEngine.CalculateHelper;
 import org.moonlightcoders.ken.calcEngine.Divider;
+import org.moonlightcoders.ken.calcEngine.DynamicHelper;
 import org.moonlightcoders.ken.calcEngine.InvalidStatementException;
 import org.moonlightcoders.ken.calcEngine.MathEquation;
+import org.moonlightcoders.ken.calcEngine.MathProcessing;
 import org.moonlightcoders.ken.calcEngine.Multiplier;
+import org.moonlightcoders.ken.calcEngine.PowerOf;
 import org.moonlightcoders.ken.calcEngine.Subtracter;
 import org.moonlightcoders.ken.calcEngine.Adder;
 import org.moonlightcoders.ken.calcEngine.CalculateBase;
@@ -14,16 +17,35 @@ public class Main {
     public static void main(String[] args) {
 //        useMathEquation();
 //        useCalculatorBase();
+//        useCalculatorHelper();
 
         String[] statements = {
-                "add 1.0",    // Error: incorrect
-                "add xx 25.0",  //Error non-numeric
-                "addX 0.0 0.0",   //Error invalid command
-                "divide 100.0 50.0",   // 100.0 / 50.0 = 2.0
-                "add 25.0 92.0",       // 25.0 + 92.0 = 117.0
-                "subtract 225.0 17.0", // 225.0 - 17.0 = 108.0
-                "multiply 11.0 3.0"    // 11.0 * 3.0 = 33.0
+                "add 25.0 92.0",
+                "power 5.0 2.0"
         };
+
+        DynamicHelper helper = new DynamicHelper(new MathProcessing[]{
+                new Adder(),
+                new PowerOf()
+        });
+
+        for (String statement : statements) {
+            String output = helper.process(statement);
+            System.out.println(output);
+        }
+    }
+
+    static void useCalculateHelper() {
+        String[] statements = {
+                    "add 1.0",    // Error: incorrect
+                    "add xx 25.0",  //Error non-numeric
+                    "addX 0.0 0.0",   //Error invalid command
+                    "divide 100.0 50.0",   // 100.0 / 50.0 = 2.0
+                    "add 25.0 92.0",       // 25.0 + 92.0 = 117.0
+                    "subtract 225.0 17.0", // 225.0 - 17.0 = 108.0
+                    "multiply 11.0 3.0"    // 11.0 * 3.0 = 33.0
+            };
+
 
         CalculateHelper helper = new CalculateHelper();
         for(String statement:statements) {
